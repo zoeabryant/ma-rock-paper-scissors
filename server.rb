@@ -3,26 +3,39 @@ require './lib/player'
 require './lib/game'
 require './lib/computer'
 
+PLAYER_NAME = ''
+
 class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
   end
 
-  get '/new-game' do
-  	erb :new_player
+  get '/new_player' do
+    erb :new_player
   end
 
-  post '/register' do
-  	@player = params[:name]
-  	erb :play
+  post '/play' do
+    PLAYER_NAME = params[:name]
+    @player_name = PLAYER_NAME
+
+    erb :play
   end
 
-  post "/play" do
-  	player = Player.new(params[:name])
+  get '/play' do
+    @player_name = PLAYER_NAME
+
+    erb :play
+  end
+
+  post "/results" do
+  	player = Player.new(PLAYER_NAME)
   	player.picks = params[:pick]
+
   	computer = Computer.new.generate
+
   	@game = Game.new(player, computer)
-  	erb :outcome
+
+  	erb :results
   end
 
   # start the server if ruby file executed directly
