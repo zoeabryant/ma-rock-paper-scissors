@@ -14,4 +14,7 @@
 
 <%end%>
 
-<a href="/play">Play again</a>
+<form action="/play" method="POST">
+	<input type="hidden" name="name" value=<%= @player_name %>>
+	<input type="submit" value="Play again!">
+</form>

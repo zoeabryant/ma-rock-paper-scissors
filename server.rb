@@ -3,8 +3,6 @@ require './lib/player'
 require './lib/game'
 require './lib/computer'
 
-PLAYER_NAME = ''
-
 class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
@@ -15,20 +13,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    PLAYER_NAME = params[:name]
-    @player_name = PLAYER_NAME
-
-    erb :play
-  end
-
-  get '/play' do
-    @player_name = PLAYER_NAME
+    @player_name = params[:name]
 
     erb :play
   end
 
   post "/results" do
-  	player = Player.new(PLAYER_NAME)
+    @player_name = params[:name]
+    player = Player.new(@player_name)
   	player.picks = params[:pick]
 
   	computer = Computer.new.generate

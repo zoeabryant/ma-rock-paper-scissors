@@ -14,7 +14,7 @@ end
 
 
 Given(/^I've registered to play$/) do
-  visit '/new-game'
+  visit '/new_player'
   click_button "Play!"
 end
 
