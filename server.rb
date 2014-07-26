@@ -20,12 +20,12 @@ class RockPaperScissors < Sinatra::Base
 
   post "/results" do
     @player_name = params[:name]
-    player = Player.new(@player_name)
-  	player.picks = params[:pick]
+    @player = Player.new(@player_name)
+  	@player.picks = params[:pick]
 
-  	computer = Computer.new.generate
+  	@computer = Computer.new.generate
 
-  	@game = Game.new(player, computer)
+  	@game = Game.new(@player, @computer)
 
   	erb :results
   end

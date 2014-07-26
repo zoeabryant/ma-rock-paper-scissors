@@ -1,0 +1,76 @@
+/** {color:red}*/
+
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+body {
+	font-family: 'Share Tech Mono', sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+input {
+	font-family: 'Share Tech Mono', sans-serif;
+}
+
+a.big-button {
+	font-size: 5em;
+}
+input[type="submit"] {
+	font-size: 3em;
+	cursor: pointer;
+}
+
+a.big-button, input[type="submit"] {
+	display: inline-block;
+	padding: 20px 40px;
+	margin: 20px 0px;
+
+	text-decoration: none;
+	color: #000000;
+
+	background: #36EC3F;
+	border: 10px solid #196C1D;
+
+	text-transform: uppercase;
+}
+
+a.big-button:hover, input[type="submit"]:hover {
+	border: 10px solid #36EC3F;
+}
+
+form.new_player input[name=name] {
+	display: inline-block;
+	padding: 20px 40px;
+	font-size: 4em;
+	border: none;
+	border-bottom: 10px solid #196C1D;
+
+	text-align: center;
+}
+
+form.play {
+	padding: 20px 40px;
+	border-bottom: 10px solid #196C1D;
+}
+
+button[name=pick] {
+	display: inline-block;
+	border: 0px;
+	background: none;
+	cursor: pointer;
+	padding-top: 20px;
+
+}
+
+button[name=pick] img:hover {
+	padding-bottom: 20px;
+	margin-top: -20px;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 2.5em;
+}
+
+img.pick {
+	height: 200px;
+}

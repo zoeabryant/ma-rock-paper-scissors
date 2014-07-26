@@ -1,8 +1,8 @@
 <h1>Make your pick <%= @player_name %>!</h1>
 
-<form action="/results" method="POST">
-	<button name="pick" value="Paper">Paper</button>
-	<button name="pick" value="Rock">Rock</button>
-	<button name="pick" value="Scissors">Scissors</button>
+<form action="/results" method="POST" class="play">
+	<button name="pick" value="Rock"><img src="/img/rock.png"></button>
+	<button name="pick" value="Paper"><img src="/img/paper.png"></button>
+	<button name="pick" value="Scissors"><img src="/img/scissors.png"></button>
 	<input type="hidden" name="name" value=<%= @player_name %>>
 </form>
